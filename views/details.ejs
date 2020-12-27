@@ -1,0 +1,41 @@
+<html>
+    <body>
+        <H2>Restaurant Details</H2><hr>
+
+	<% if (restaurant.photo) { %>
+            <img src="data:image/jpg;base64, <%= restaurant.photo %>"><br>
+        <% } %>
+
+        <p>Restaurant ID: <%= restaurant.restaurant_id %></p>
+        <p>Restaurant name: <%= restaurant.name %></p>
+        <p>Restaurant building: <%= restaurant.address.building %></p>
+        <p>Restaurant coordinate: <%= restaurant.address.coord%>
+
+        <% if(restaurant.address.coord) {%>
+        <a href="/leaflet?coord=<%= restaurant.address.coord%>"><input type="button" value="Leaflet"></a><br>
+        <% } %>
+
+        <p>Restaurant street: <%= restaurant.address.street %></p>
+        <p>Restaurant zipcode: <%= restaurant.address.zipcode %></p>
+        <p>Restaurant borough: <%= restaurant.borough %></p>
+        <p>Restaurant cuisine: <%= restaurant.cuisine %></p>
+        <p>Restaurant author: <%= restaurant.author %></p>
+
+        <% if(restaurant.rating) {%>
+            <% for (var i = 0; i < restaurant.rating.length;i++){%>
+            <% %>
+            <ul>
+                <li>Restaurant rating: <%= restaurant.rating[i].score %></li>
+                <li>Rating author: <%= restaurant.rating[i].author %></li>
+            </ul>
+            <% } %>
+        <% } %>
+
+        
+
+        <a href="/edit?_id=<%= restaurant._id %>"><input type="button" value="Edit"></a>
+        <a href="/rate?_id=<%= restaurant._id %>"><input type="button" style="width:100px" value="Rate"></a>
+        <a href="/delete?_id=<%= restaurant._id %>"><input type="button" value="Delete"></a><br><br><br>
+        <a href="/"><input type="button" value="Home"></a>
+    </body>
+</html>

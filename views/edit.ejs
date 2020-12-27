@@ -1,0 +1,24 @@
+<html>
+    <body>
+	<H2>Restaurant Details</H2><hr>
+        <form action="/update" method="POST" enctype="multipart/form-data">
+            Restaurant ID: <input name="restaurant_id" value=<%= restaurant.restaurant_id %>><br><br>
+            Restaurant Name:<font style="color:red">*</font> <input name="name" value=<%= restaurant.name %> /><br><br>
+            Restaurant building: <input name="building" value=<%= restaurant.address.building %> /><br><br>
+            Restaurant coordinate: <input name="coord" value=<%= restaurant.address.coord %> /><br><br>
+            Restaurant street: <input name="street" value=<%= restaurant.address.street %> /><br><br>
+            Restaurant zipcode: <input name="zipcode" value=<%= restaurant.address.zipcode %> /><br><br>
+            Restaurant borough: <input name="borough" value=<%= restaurant.borough %> /><br><br>
+            Restaurant cuisine: <input name="cuisine" value=<%= restaurant.cuisine %> /><br><br>
+
+            <input type="file" name="filetoupload"><br>
+            <input type="hidden" name="_id" value=<%= restaurant._id %>><br>
+
+            <input type="submit" value="update">  
+	    <a href="/"><input type="button" value="Home"></a>
+        </form>
+        <% if (restaurant.photo) { %>
+            <img src="data:image/jpg;base64, <%= restaurant.photo %>"><br>
+        <% } %>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <form action="/insert" method="POST" enctype="multipart/form-data">
+            Restaurant ID: <input name="restaurant_id" ><br><br>
+            Restaurant Name:<font style="color:red">*</font> <input name="name" /><br><br>
+            Restaurant building: <input name="building"  /><br><br>
+            Restaurant coordinate (X,Y): <input name="coord"/><br><br>
+            Restaurant street: <input name="street"  /><br><br>
+            Restaurant zipcode: <input name="zipcode"  /><br><br>
+            Restaurant borough: <input name="borough"  /><br><br>
+            Restaurant cuisine: <input name="cuisine"  /><br><br>
+
+            <input type="file" name="filetoupload"><br><br>
+            <input type="hidden" name="_id">
+            <input type="submit" value="Create">  
+	    <a href="/"><input type="button" value="Home"></a> 
+        </form>
+    </body>
+</html>

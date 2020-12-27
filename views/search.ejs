@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <form action="/search_name" method="POST" enctype="multipart/form-data">
+            Search by name, cuisine or borough:<br><br>
+            Name: <input type="text" name="name">
+            
+            <input type="submit" value="search by name"><br>   
+        </form>
+
+        <form action="/search_cuisine" method="POST" enctype="multipart/form-data">
+            Cuisine: <input type="text" name="cuisine">
+
+            <input type="submit" value="search by cuisine"><br>
+        </form>
+
+        <form action="/search_borough" method="POST" enctype="multipart/form-data">
+            borough: <input type="text" name="borough">
+            <input type="submit" value="search by borough"><br><br>
+
+	    <a href="/"><input type="button" value="Home"></a> 
+        </form>
+    </body>
+</html>

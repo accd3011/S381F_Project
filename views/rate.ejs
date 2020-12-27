@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <% if (restaurant.photo) { %>
+            <img src="data:image/jpg;base64, <%= restaurant.photo %>"><br>
+        <% } %>
+        <p>Restaurant name: <%= restaurant.name %></p>
+        <form action="/rating" method="POST" enctype="multipart/form-data">
+            Rating (0-10): <input type="number" name="score">
+
+            
+            <input type="hidden" name="_id" value=<%= restaurant._id %>>
+            <input type="submit" value="Rate"><br><br>
+	    <a href="/details?_id=<%= restaurant._id %>"><input type="button" value="Back"></a>
+        </form>
+
+    </body>
+</html>
